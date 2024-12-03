@@ -40,29 +40,45 @@
         <p class="text-center text-gray-600 mb-8">Explora algunos de nuestros ideas de proyecto que tenemos para ti. </p>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           <!-- Reemplaza estas divs con imágenes reales -->
-          <div class="gallery-item bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-            <span class="text-gray-500">Imagen 1</span>
+          <div 
+        class="gallery-item bg-gray-300 h-64 rounded-lg cursor-pointer" 
+        style="background-image: url('japa.jpg'); background-size: cover; background-position: center;"
+        onclick="openModal('japa.jpg')">
           </div>
-          <div class="gallery-item bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-            <span class="text-gray-500">Imagen 2</span>
+          <div 
+        class="gallery-item bg-gray-300 h-64 rounded-lg cursor-pointer" 
+        style="background-image: url('japa1.jpg'); background-size: cover; background-position: center;"
+        onclick="openModal('japa1.jpg')">
           </div>
-          <div class="gallery-item bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-            <span class="text-gray-500">Imagen 3</span>
+          <div 
+        class="gallery-item bg-gray-300 h-64 rounded-lg cursor-pointer" 
+        style="background-image: url('japa2.jpg'); background-size: cover; background-position: center;"
+        onclick="openModal('japa2.jpg')">
           </div>
-          <div class="gallery-item bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-            <span class="text-gray-500">Imagen 4</span>
+          <div 
+        class="gallery-item bg-gray-300 h-64 rounded-lg cursor-pointer" 
+        style="background-image: url('japa3.jpg'); background-size: cover; background-position: center;"
+        onclick="openModal('japa3.jpg')">
           </div>
-          <div class="gallery-item bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-            <span class="text-gray-500">Imagen 5</span>
+          <div 
+        class="gallery-item bg-gray-300 h-64 rounded-lg cursor-pointer" 
+        style="background-image: url('japa4.jpg'); background-size: cover; background-position: center;"
+        onclick="openModal('japa4.jpg')">
           </div>
-          <div class="gallery-item bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-            <span class="text-gray-500">Imagen 6</span>
+          <div 
+        class="gallery-item bg-gray-300 h-64 rounded-lg cursor-pointer" 
+        style="background-image: url('japa5.jpg'); background-size: cover; background-position: center;"
+        onclick="openModal('japa5.jpg')">
           </div>
-          <div class="gallery-item bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-            <span class="text-gray-500">Imagen 7</span>
+          <div 
+        class="gallery-item bg-gray-300 h-64 rounded-lg cursor-pointer" 
+        style="background-image: url('japa6.jpg'); background-size: cover; background-position: center;"
+        onclick="openModal('japa6.jpg')">
           </div>
-          <div class="gallery-item bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-            <span class="text-gray-500">Imagen 8</span>
+          <div 
+        class="gallery-item bg-gray-300 h-64 rounded-lg cursor-pointer" 
+        style="background-image: url('japa7.jpg'); background-size: cover; background-position: center;"
+        onclick="openModal('japa7.jpg')">
           </div>
         </div>
       </div>
@@ -77,3 +93,38 @@
   </footer>
 </body>
 </html>
+<!-- Modal -->
+<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden" onclick="closeModal()">
+  <div class="relative" onclick="event.stopPropagation()">
+    <img id="modalImage" src="" alt="Imagen ampliada" class="max-w-full max-h-full rounded-lg">
+    <button 
+      class="absolute top-2 right-2 bg-white text-black rounded-full px-3 py-1 text-lg font-bold"
+      onclick="closeModal()">X</button>
+  </div>
+</div>
+
+<script>
+  function openModal(imageSrc) {
+    const modal = document.getElementById('imageModal');
+    document.getElementById('modalImage').src = imageSrc;
+    modal.classList.remove('hidden');
+    modal.focus();
+
+    // Escuchar tecla ESC para cerrar
+    document.addEventListener('keydown', handleEscapeKey);
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.add('hidden');
+
+    // Dejar de escuchar tecla ESC
+    document.removeEventListener('keydown', handleEscapeKey);
+  }
+
+  function handleEscapeKey(event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  }
+</script>
