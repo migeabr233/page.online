@@ -105,8 +105,8 @@
 </section>
 
 <!-- Modal -->
-<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
-  <div class="relative">
+<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden" onclick="closeModal()">
+  <div class="relative" onclick="event.stopPropagation()">
     <img id="modalImage" src="" alt="Imagen ampliada" class="max-w-full max-h-full rounded-lg">
     <button 
       class="absolute top-2 right-2 bg-white text-black rounded-full px-3 py-1 text-lg font-bold"
@@ -116,15 +116,29 @@
 
 <script>
   function openModal(imageSrc) {
+    const modal = document.getElementById('imageModal');
     document.getElementById('modalImage').src = imageSrc;
-    document.getElementById('imageModal').classList.remove('hidden');
+    modal.classList.remove('hidden');
+    modal.focus();
+
+    // Escuchar tecla ESC para cerrar
+    document.addEventListener('keydown', handleEscapeKey);
   }
 
   function closeModal() {
-    document.getElementById('imageModal').classList.add('hidden');
+    const modal = document.getElementById('imageModal');
+    modal.classList.add('hidden');
+
+    // Dejar de escuchar tecla ESC
+    document.removeEventListener('keydown', handleEscapeKey);
+  }
+
+  function handleEscapeKey(event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
   }
 </script>
-
 
     <!-- Sección de Testimonios -->
     <section class="py-16 bg-white">
