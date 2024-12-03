@@ -30,18 +30,44 @@
 </head>
 <body class="bg-gray-50">
   <!-- Encabezado -->
-  <header class="bg-white shadow-md fixed w-full z-50">
-    <div class="container mx-auto px-4 py-4">
-      <div class="flex justify-between items-center">
-        <h1 class="text-3xl font-bold text-gray-800">D Jesus Terminaciones</h1>
-        <div class="contact-info flex space-x-4">
-          <a href="tel:+18096448884" class="text-gray-600 hover:text-blue-600"><i class="fas fa-phone mr-2"></i>Llámanos</a>
-          <a href="mailto:Andyantoniodejesussanchez@gmail.com" class="text-gray-600 hover:text-blue-600"><i class="fas fa-envelope mr-2"></i>Email</a>
-          <a href="https://wa.link/hyt1uh" class="text-gray-600 hover:text-blue-600"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
-        </div>
+<header class="bg-white shadow-md fixed w-full z-50">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex flex-wrap justify-between items-center">
+      <!-- Logo -->
+      <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
+        D Jesus Terminaciones
+      </h1>
+      <!-- Botón de Menú en Pantallas Pequeñas -->
+      <button class="block md:hidden text-gray-600" id="menu-button">
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- Contactos -->
+      <div
+        class="contact-info flex-col md:flex-row flex space-y-2 md:space-y-0 md:space-x-4 hidden md:flex"
+        id="menu"
+      >
+        <a href="tel:+18096448884" class="text-gray-600 hover:text-blue-600">
+          <i class="fas fa-phone mr-2"></i>Llámanos
+        </a>
+        <a href="mailto:Andyantoniodejesussanchez@gmail.com" class="text-gray-600 hover:text-blue-600">
+          <i class="fas fa-envelope mr-2"></i>Email
+        </a>
+        <a href="https://wa.link/hyt1uh" class="text-gray-600 hover:text-blue-600">
+          <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+        </a>
       </div>
     </div>
-  </header>
+  </div>
+  <!-- JS para el menú desplegable -->
+  <script>
+    const menuButton = document.getElementById("menu-button");
+    const menu = document.getElementById("menu");
+
+    menuButton.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  </script>
+</header>
 
   <!-- Contenido Principal -->
   <main class="pt-20">
@@ -58,12 +84,12 @@
         <h3 class="text-xl font-semibold text-center">Acabados Interiores</h3>
       </a>
 
-      <!-- Servicio: Renovaciones -->
-      <a href="renovaciones.html" class="service-card bg-white rounded-lg shadow-lg p-6 block hover:shadow-xl">
+      <!-- Servicio: herreria -->
+      <a href="herreria.html" class="service-card bg-white rounded-lg shadow-lg p-6 block hover:shadow-xl">
         <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-          <i class="fas fa-home text-white text-2xl"></i>
+          <i class="fas fa-hammer text-white text-2xl"></i>
         </div>
-        <h3 class="text-xl font-semibold text-center">Renovaciones</h3>
+        <h3 class="text-xl font-semibold text-center">Herreria</h3>
       </a>
 
       <!-- Servicio: Trabajos Personalizados -->
@@ -71,7 +97,7 @@
         <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
           <i class="fas fa-tools text-white text-2xl"></i>
         </div>
-        <h3 class="text-xl font-semibold text-center">Trabajos Personalizados</h3>
+        <h3 class="text-xl font-semibold text-center">Trabajos Realizados</h3>
       </a>
     </div>
   </div>
