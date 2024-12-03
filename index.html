@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D Jesus Terminaciones - Servicios Profesionales de Construcción y Acabados</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+    * {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .gallery-item:hover {
+      transform: scale(1.02);
+    }
+    .contact-info a:hover {
+      color: #2563eb;
+    }
+    .swiper-pagination-bullet-active {
+      background: #2563eb !important;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Encabezado -->
+  <header class="bg-white shadow-md fixed w-full z-50">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-gray-800">D Jesus Terminaciones</h1>
+        <div class="contact-info flex space-x-4">
+          <a href="tel:+1234567890" class="text-gray-600 hover:text-blue-600"><i class="fas fa-phone mr-2"></i>Llámanos</a>
+          <a href="mailto:info@djesus.com" class="text-gray-600 hover:text-blue-600"><i class="fas fa-envelope mr-2"></i>Correo</a>
+          <a href="https://wa.me/1234567890" class="text-gray-600 hover:text-blue-600"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="pt-20">
+    <!-- Sección de Servicios -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Servicios que Ofrecemos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="service-card bg-white rounded-lg shadow-lg p-6">
+            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-paint-roller text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-center">Acabados Interiores</h3>
+          </div>
+          <div class="service-card bg-white rounded-lg shadow-lg p-6">
+            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-home text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-center">Renovación</h3>
+          </div>
+          <div class="service-card bg-white rounded-lg shadow-lg p-6">
+            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-tools text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-center">Trabajo Personalizado</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Galería -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Nuestro Trabajo</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="gallery-item bg-gray-300 h-64 rounded-lg"></div>
+          <div class="gallery-item bg-gray-300 h-64 rounded-lg"></div>
+          <div class="gallery-item bg-gray-300 h-64 rounded-lg"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Lo que Dicen Nuestros Clientes</h2>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="bg-white rounded-lg shadow-lg p-6">
+                <p class="text-gray-600">"¡Calidad de trabajo increíble!"</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto text-center">
+      <p>D Jesus Terminaciones &copy; 2024</p>
+      <a href="https://translate.google.com/translate?hl=es&sl=es&tl=en&u=https://www.tupagina.com" class="text-blue-400">Traducir con Google</a>
+    </div>
+  </footer>
+
+  <script>
+    new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      autoplay: {
+        delay: 3000,
+      },
+    });
+  </script>
+</body>
+</html>
